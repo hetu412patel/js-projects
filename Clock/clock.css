@@ -1,0 +1,42 @@
+* {
+    background-color: black;
+    margin-top: 10px;
+}
+#container{
+    position: relative;
+    margin: auto;
+    height: 45vw;
+    width: 45vw;
+    background: url(clock.png) no-repeat;
+    background-size: 100%;
+}
+#hours, #minutes, #seconds{
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+#hours{
+    height: 27%;
+    width: 0.6%;
+    top: 22%;
+    right: 49.80%;
+    opacity: 0.8;
+    
+}
+#minutes{
+    height: 37%;
+    width: 0.6%;
+    top: 11%;
+    right: 49.8%;
+    opacity: 0.8;
+   
+}
+#seconds{
+    height: 39%;
+    width: 0.2%;
+    top: 10%;
+    right: 49.96%;
+    opacity: 0.8;
+    
+}

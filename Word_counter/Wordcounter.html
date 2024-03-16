@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body {
+            padding: 50px 100px;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: rgb(20, 38, 61);
+            color: cornsilk;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        #textbox {
+            width: 99.5%;
+            border-color: rgb(20, 38, 61);
+            font-size: 15px;
+        }
+
+        p {
+            text-align: center;
+            background-color: rgb(20, 38, 61);
+            font-size: 25px;
+            font-weight: bold;
+            color: cornsilk;
+            padding: 10px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word and Character Counter</h1>
+    <textarea id="textbox" cols="30" rows="10"></textarea>
+    <p>
+        <span id="word">0</span> Words and
+        <span id="char">0</span> Characters
+    </p>
+    <script>
+        // Array is collection of strings so string will store in array
+        let textbox = document.getElementById("textbox");
+        textbox.addEventListener('input', function () {
+            var text = this.value;
+            let char = text.length;
+            document.getElementById("char").innerHTML = char;
+            text = text.trim();// before annd after string remove extra spaces
+            let words = text.split(" ");
+            let cleanList = words.filter(function (elm) {
+                return elm != "";
+            });// cleanList array in which there are no extra spaces in betwwen two words
+            document.getElementById("word").innerHTML = cleanList.length;
+        });
+    </script>
+</body>
+
+</html>

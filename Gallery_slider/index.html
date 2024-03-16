@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Slider</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(206, 21%, 94%);
+
+            /* To move slider exactly center. */
+            display: grid;
+            place-items: center;
+        }
+        .center_div{
+            width: 100vw;
+            display: flex;
+            overflow-y: hidden;
+            overflow-x: scroll;
+        }
+        img{
+            padding: 20px;
+            border-radius: 30px;
+        }
+        .center_div::-webkit-scrollbar{
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="center_div" id = "centerdiv"> </div>
+    </div>
+</body>
+
+<script>
+
+    const centerDiv = document.getElementById('centerdiv');
+
+    // To get limited url we write '?_limit=number' at the end of the url.
+    // use jsonplaceholder api
+    fetch("https://jsonplaceholder.typicode.com/photos?_limit=20").then((apidata) => {
+        return apidata.json();
+    }).then((jsondata) => {
+        // console.log(jsondata[0].url);
+        // console.log(jsondata[1].url);
+        
+        // Get only all the url 
+        jsondata.map((val) => {
+            key = val.id; // If we work with map method this key property we always write. In this we call id so we can uniqually dentify all the images.
+            let img = document.createElement("img");
+            img.src = `https://picsum.photos/200/300?random=${val.id}`; // use lorem picsum api
+            centerDiv.appendChild(img);
+            console.log(val.url);
+        })
+    })
+</script>
+
+</html>

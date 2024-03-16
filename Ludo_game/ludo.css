@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(174, 44, 250);
+    box-sizing: border-box;
+    font-family: 'DynaPuff', cursive;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    text-shadow: 5px 3px white;
+    margin-top: 40px;
+}
+.player{
+    display: inline-block;
+}
+h2{
+    margin-top: 30px;
+    font-size: 30px;
+    text-shadow: 2px 0 white;
+    color: rgb(247, 10, 10);
+}
+img{
+    width: 300px;
+}
+button{
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-shadow: 2px 0px white;
+    border: 5px solid white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}

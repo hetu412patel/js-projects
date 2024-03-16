@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 20px 100px;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .btn {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 2px solid gray;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #white {
+            background-color: white;
+        }
+
+        #black {
+            background-color: black;
+        }
+
+        #purple {
+            background-color: purple;
+        }
+
+        #color-switcher {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="color-switcher">
+        <span class="btn" id="blue" onclick="changeBG('#0000ff')"></span>
+        <!-- span can't take width and height because bydefault it is inline so we change display property -->
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+        <span class="btn" id="purple" onclick="changeBG('#800080')"></span>
+    </div>
+    <h1 class="text">About us</h1>
+    <img src="city.jpg">
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente reprehenderit accusamus saepe eum
+        neque repellendus voluptatibus aut, dolor possimus repudiandae, quae ad beatae sed nihil deserunt delectus
+        quidem soluta vero fugit dolores perferendis veritatis obcaecati. Corrupti dignissimos, natus quidem similique
+        architecto possimus aliquid qui error fuga tenetur alias eum eveniet saepe voluptatum ipsam labore ut odio, quo
+        consequuntur eius temporibus, dicta magni. Dolorem hic error aspernatur aut a, alias, molestias laudantium
+        accusamus, repudiandae fugit incidunt rerum omnis delectus eius minima laborum unde saepe odit! A maiores
+        quaerat rerum libero! Dolore veniam voluptate commodi est corporis autem ipsam in consequuntur non quo, illum
+        maiores porro aut distinctio laudantium? Consectetur voluptatem suscipit quos mollitia consequatur, numquam
+        quisquam commodi voluptas natus officia unde tempore esse delectus, tenetur, minus eaque provident aperiam
+        officiis doloremque quas inventore quaerat? Iusto, ipsam ullam! Libero, officia? Optio quidem ducimus officiis,
+        unde, sequi odio quod enim molestias, sint repellendus maxime! Sunt, rerum, a enim ratione dolorum est
+        blanditiis recusandae corrupti libero neque ipsa ad distinctio illo tempore. Adipisci blanditiis labore sed,
+        debitis quod obcaecati, voluptates a reprehenderit harum esse, officiis accusamus vitae earum nam consequuntur
+        perferendis ipsum nobis placeat ea. Nesciunt, nemo commodi quis nam obcaecati explicabo corrupti aut impedit
+        blanditiis enim molestiae temporibus consequatur dolorem laborum soluta suscipit quaerat nulla amet deleniti
+        quam? Quis quisquam ut corporis voluptatem, saepe, dicta distinctio, consequatur debitis omnis maxime eum
+        officia itaque ad cumque ea. Officia dolores libero provident a aspernatur dolorum nihil quae repellendus
+        repellat non, velit expedita recusandae esse neque, tempora tempore animi eius iure voluptate molestiae quaerat
+        architecto ratione. Dolores dolore ipsam, aperiam tempore perspiciatis tenetur laborum minima odio sint, esse,
+        eos ut reprehenderit perferendis. Libero doloremque officiis consequatur expedita earum placeat saepe. Veniam
+        soluta doloribus perspiciatis? Modi doloribus rem aliquam itaque a voluptates perferendis deleniti, ipsa placeat
+        tenetur nesciunt fugit, repellat voluptate alias beatae eum corporis est? Delectus, a. Ipsum, praesentium!
+        Perferendis, dicta nostrum? Quaerat expedita sapiente architecto corrupti omnis! Veritatis odit quae animi nisi.
+        Doloremque, minima vero ab a aperiam in illum ipsam eaque voluptatum incidunt, veniam consequatur rerum eius
+        voluptates nihil reiciendis soluta. Eveniet necessitatibus ipsam expedita ducimus. Enim aut maiores corrupti
+        quas dignissimos consequatur, id aspernatur amet doloribus sequi consectetur obcaecati at hic placeat
+        praesentium error, autem asperiores! Eos ab blanditiis vero aliquid voluptatibus nesciunt repellat itaque,
+        nostrum maiores aspernatur officiis corporis reprehenderit earum beatae distinctio deleniti, iure eveniet quo
+        perspiciatis totam deserunt illo perferendis rerum corrupti! Odit consectetur fuga mollitia repudiandae nulla
+        culpa voluptate. Nisi velit, eum neque dolorem laborum ratione minima minus quasi placeat nostrum vitae magnam.
+        Blanditiis dolor harum ipsa qui quae modi, eius quaerat unde optio quo iste nobis dolorum minima tenetur,
+        suscipit odit ipsam enim sunt et delectus distinctio illum, dolores obcaecati fugit. Obcaecati sit quaerat
+        magnam exercitationem laborum accusamus quisquam dolore maiores? Maiores sint aliquid dolorem dolores non in,
+        voluptatibus veniam libero ut accusamus corrupti voluptates ipsum. Id culpa dignissimos expedita, repellat et
+        impedit quasi tempora neque? Expedita, aliquid officiis aperiam odio dolore quisquam nisi perspiciatis provident
+        rem accusantium.
+    </p>
+    <script>
+        function changeBG(color) {
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName("text");
+            if (color == "#000000") {
+                for (let elm of txt) {
+                    elm.style.color = "white";
+                }
+            } else {
+                for (let elm of txt) {
+                    elm.style.color = "black";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
